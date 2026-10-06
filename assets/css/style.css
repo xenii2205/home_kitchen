@@ -1,0 +1,200 @@
+html {
+  overflow-y: scroll; /* Erzwingt immer die vertikale Scrollleiste, um ein horizontales Verspringen der Seite beim Laden zu verhindern */
+  font-family:
+    "Arial", sans-serif; /* Bestimmt die Schriftart für die gesamte Seite */
+}
+
+/* Head */
+.section-container-header {
+  height: 5vh; /* Setzt die Höhe auf 5% der Ansichtsfenster-Höhe */
+  display: flex; /* Macht das Element zu einem flexiblen Container */
+  flex-direction: column; /* Richtet die untergeordneten Elemente vertikal aus */
+  justify-content: center; /* Zentriert den Inhalt vertikal innerhalb des Headers */
+  background-color: rgb(
+    65,
+    63,
+    63
+  ); /* Legt eine dunkle Hintergrundfarbe fest */
+  border-radius: 20px; /* Rundet die Ecken des Containers um 20 Pixel ab */
+}
+
+.container-header-nav,
+.nav-list {
+  list-style: none; /* Entfernt die Aufzählungspunkte (Punkte vor den Links) */
+  display: flex; /* Ordnet die Listenelemente nebeneinander an */
+  justify-content: center; /* Zentriert die Listenelemente horizontal */
+  align-items: center; /* Zentriert die Listenelemente vertikal */
+  gap: 1rem; /* Erzeugt einen gleichmäßigen Abstand zwischen den Buttons/Links */
+  padding: 0; /* Entfernt Standard-Browser-Abstände (Innenabstand) */
+  margin: 0; /* Entfernt Standard-Browser-Abstände (Außenabstand) */
+}
+
+.nav-button {
+  background-color: rgb(240, 240, 240);
+  color: rgb(40, 40, 40);
+  border: 1px solid rgb(220, 220, 220);
+  font-size: 16px; /* Legt die Schriftgröße auf 16 Pixel fest */
+  cursor: pointer; /* Ändert den Mauszeiger beim Darüberfahren zu einer Hand */
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* erste Section */
+.section-container-peace {
+  border-radius: 20px; /* Rundet die Ecken des ersten Sektionscontainers ab */
+}
+
+.section-peace-welc {
+  display: flex; /* Macht das Element zu einem Flexbox-Container */
+  justify-content: center; /* Zentriert den Text horizontal */
+  align-items: center; /* Zentriert den Text vertikal */
+  font-size: 30px; /* Setzt die Schriftgröße auf 30 Pixel */
+  font-weight: bold; /* Macht den Text fett */
+  font-family: "Arial", sans-serif; /* Bestimmt die zu verwendende Schriftart */
+}
+
+.section-peace {
+  display: flex; /* Flexibler Container für den Bereich */
+  justify-content: center; /* Zentriert das Bild horizontal */
+  align-items: center; /* Zentriert das Bild vertikal */
+
+  width: 100vw; /* 100% der Fensterbreite */
+  height: 65vh; /* 65% der Fensterhöhe */
+  /*background-color: rgb(40, 40, 40); /* Deine Testfarbe */
+  box-sizing: border-box; /* Sorgt dafür, dass Padding/Border in die Breiten-/Höhenberechnung eingerechnet werden */
+  margin-top: 1rem; /* Abstand nach oben */
+  margin-bottom: 1rem; /* Abstand nach unten */
+}
+
+.section-peace-img {
+  max-width: 100%; /* Bild wird nie breiter als der Container */
+  max-height: 100%; /* Bild wird nie höher als der Container -> WICHTIG! */
+  object-fit: contain; /* Verhindert, dass das Bild verzerrt oder gequetscht wird */
+  border: 1px solid rgb(0, 0, 0); /* Erzeugt einen dünnen schwarzen Rand um das Bild */
+  border-radius: 50%; /* Macht das Bild kreisrund */
+  margin-bottom: auto; /* Steuert die Ausrichtung im Flex-Container */
+}
+
+/* zweite Section */
+.section-container-pages {
+  background-color: rgb(
+    40,
+    40,
+    40
+  ); /* Legt eine dunkle Test-Hintergrundfarbe fest */
+  border-radius: 20px; /* Rundet die Ecken des Containers ab */
+}
+
+.section-pages {
+  display: flex; /* Flexibler Container für den Bereich */
+  justify-content: center; /* Zentriert den Inhalt horizontal */
+  align-items: center; /* Zentriert den Inhalt vertikal */
+
+  width: 100vw; /* 100% der Fensterbreite */
+  height: 65vh; /* 65% der Fensterhöhe */
+  box-sizing: border-box; /* Bezieht Ränder und Innenabstände in die Elementgröße ein */
+  margin-top: 1rem; /* Abstand nach oben */
+  margin-bottom: 1rem; /* Abstand nach unten */
+  border-radius: 20px; /* Rundet die Ecken des Sektionsbereichs ab */
+}
+
+/* Gemeinsame Basis für beide Boxen, damit sie sich den Platz 50/50 teilen */
+.section-pages-cook,
+.section-pages-bake {
+  display: flex; /* Aktiviert Flexbox für die Kachel */
+  flex-direction: column; /* Elemente (Text + Bild) untereinander anordnen */
+  justify-content: center; /* Vertikal zentrieren */
+  align-items: center; /* Horizontal zentrieren */
+  flex: 1; /* WICHTIG: Teilt den verfügbaren Platz exakt zu gleichen Teilen (50% / 50%) auf */
+  height: 100%; /* Nimmt die volle Höhe der .section-pages (65vh) ein */
+  min-height: 0; /* Verhindert das Überlaufen von Flex-Inhalten */
+  box-sizing: border-box; /* Berücksichtigt Innenabstände korrekt im Layout */
+  overflow: hidden; /* Versteckt Inhalte, die über die abgerundeten Ecken hinausragen */
+  border-radius: 20px; /* Rundet die Ecken der einzelnen Kacheln ab */
+  margin-bottom: 1rem; /* Abstand nach unten zwischen den Kacheln */
+}
+
+.section-pages-text {
+  text-align: center; /* Zentriert den Text horizontal */
+  font-weight: bold; /* Macht den Text fett */
+  font-family: "Arial", sans-serif; /* Bestimmt die Schriftart */
+  color: white; /* Färbt den Text weiß ein */
+  font-size: clamp(
+    18px,
+    3vw,
+    28px
+  ); /* Skaliert die Schriftgröße dynamisch je nach Bildschirm */
+  flex-shrink: 0; /* Verhindert, dass der Text zusammengepresst wird */
+}
+
+.recipes_link {
+  display: contents; /* Lässt das Link-Element selbst im Layout verschwinden, damit Kinder direkt vom Flex-Container gesteuert werden */
+}
+
+.section-pages-img {
+  display: block; /* Wandelt das Bild in ein Block-Element um */
+  max-height: 85%; /* Begrenzt die maximale Bildhöhe auf 85% des Containers */
+  max-width: 85%; /* Begrenzt die maximale Bildbreite auf 85% des Containers */
+  object-fit: contain; /* Sorgt dafür, dass das Bild proportional skaliert wird */
+  border-radius: 50%; /* Falls das Bild ein Kreis sein soll */
+  margin-bottom: auto; /* Steuert den automatischen Außenabstand nach unten */
+}
+
+/* Footer */
+.footer {
+  width: 100vw; /* 100% der Fensterbreite */
+  height: 10vh; /* 10% der Fensterhöhe */
+}
+
+/* Rezepte */
+/*_________________________________________________________________________*/
+/* Der Hauptcontainer für das gesamte Rezept */
+.recipe-container {
+  max-width: 90%; /* Begrenzt die maximale Breite des Rezeptbereichs auf 90% */
+  margin: 0 auto; /* Zentriert den Rezeptcontainer horizontal */
+  padding: 2rem; /* Abstand innerhalb des Containers, 1rem = 16px */
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05); /* Optional: Schatten für einen leichten 3D-Effekt */
+}
+
+/* Oberer Bereich: Zutaten und Bild nebeneinander */
+.recipe-top {
+  display: flex; /* Ordnet Zutaten und Bild nebeneinander an */
+  gap: 2rem; /* Abstand zwischen Text und Bild */
+  align-items: flex-start; /* Oben bündig ausrichten */
+  margin-bottom: 3rem; /* Abstand nach unten zur Zubereitung */
+}
+
+/* Beide Spalten nehmen gleich viel Platz ein */
+.recipe-ingredients,
+.recipe-image-box {
+  flex: 1; /* Verteilt den verfügbaren Platz gleichmäßig (50/50) auf beide Spalten */
+  font-size: 20px; /* Setzt die Schriftgröße auf 20 Pixel */
+}
+
+/* Bild-Anpassung */
+.recipe-img {
+  width: 600px; /* Lässt das Bild die gesamte Spaltenbreite ausfüllen */
+  height: 600px; /* Hält das Seitenverhältnis des Bildes automatisch bei */
+  border-radius: 8px; /* Sieht moderner aus durch leicht abgerundete Ecken */
+  object-fit: cover; /* Schneidet das Bild bei Bedarf passend zu, um Verzerrung zu verhindern */
+  display: block; /* Entfernt mögliche Leerräume unter dem Bild */
+}
+
+/* Unterer Bereich: Abstand zwischen den Zubereitungsschritten statt <br> */
+.recipe-instructions ol li {
+  margin-bottom: 1rem; /* Macht den Abstand zwischen den Schritten sauber */
+  line-height: 1.5; /* Erhöht den Zeilenabstand für eine bessere Lesbarkeit */
+}
+
+/* Responsive Anpassung für Handys */
+@media (max-width: 768px) {
+  .recipe-top {
+    flex-direction: column; /* Auf dem Handy untereinander statt nebeneinander */
+  }
+}
+
+.recipe-ingredients-list,
+.recipe-instructions-list {
+  font-family: "Arial", sans-serif; /* Bestimmt die Schriftart */
+  font-size: 20px; /* Setzt die Schriftgröße auf 20 Pixel */
+}
